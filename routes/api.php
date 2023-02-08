@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\RegisterUserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/register' , [RegisterUserController::class, 'register']);
 
 Route::post('/login' ,[RegisterUserController::class, 'login']);
+
+
+Route::post('/cart/add' ,[CartController::class, 'addToCart']);
+Route::post('/cart/remove' ,[CartController::class, 'removeFromCart']);

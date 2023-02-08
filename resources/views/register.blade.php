@@ -96,7 +96,7 @@ body {
 .login {
 	width: 450px;
 	padding: 30px;
-	padding-top: 156px;
+	padding-top: 100px;
 	margin: auto;
 }
 
@@ -220,8 +220,13 @@ body {
                  
                          </div>
                       </div>
+
+					  <div>
+						<P> Already have an account? <a href="/login">Sign In</a><p>
+					</div>
+
                     <button class="button login__submit" input type="submit">
-                        <span class="button__text">Log In Now</span>
+                        <span class="button__text">CREATE ACCOUNT</span>
                         <i class="button__icon fas fa-chevron-right"></i>
                     </button>				
                 </form>

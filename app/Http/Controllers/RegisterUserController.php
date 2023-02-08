@@ -121,7 +121,14 @@ class RegisterUserController extends BaseController
         // TODO: We will store the logged in user in a Session variable,
         //          So that we can access the logged in user across the application
 
-        Session(['user' => $user]);
+        // Session(['user' => $user]);
+        session(['user' => json_encode($user)]);
+        session(['name' => 'Damaris']);
+
+
+        \Log::info('Testing session in login');
+        \Log::info(session('name'));
+
         // return session('user');
 
         return redirect('/catalogue');

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,7 @@ Route::get('/', function () {
 Route::get('/register', function () {
     return view('register');
 });
-Route::get('/catalogue', function () {
-    return view('catalogue');
-});
+Route::get('/catalogue', [ProductController::class, 'viewCatalogue']);
 
 Route::get('/login', function () {
     return view('login');

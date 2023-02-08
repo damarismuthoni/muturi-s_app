@@ -96,7 +96,7 @@ body {
 .login {
 	width: 450px;
 	padding: 30px;
-	padding-top: 156px;
+	padding-top: 97px;
 	margin: auto;
 }
 
@@ -225,7 +225,12 @@ body {
                         <input type="password" class="login__input" name="password" id="password" placeholder="Password">
                         <div class="invalid-feedback"></div>
                     </div>
-                    <button class="button login__submit" input type="submit">
+
+					<div>
+						<P> Don't have an account? <a href="/register">Sign Up</a><p>
+					</div>
+                    
+					<button class="button login__submit" input type="submit">
                         <span class="button__text" style="margin: auto">Log In </span>
                         <i class="button__icon fas fa-chevron-right"></i>
                     </button>				
