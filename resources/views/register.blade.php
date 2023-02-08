@@ -31,7 +31,7 @@ body {
 	background: linear-gradient(90deg, #5D54A4, #7C78B8);		
 	position: relative;	
 	height: 600px;
-	width: 360px;	
+	width: 600px;	
 	box-shadow: 0px 0px 24px #5C5696;
 }
 
@@ -94,9 +94,10 @@ body {
 }
 
 .login {
-	width: 320px;
+	width: 450px;
 	padding: 30px;
 	padding-top: 156px;
+	margin: auto;
 }
 
 .login__field {
@@ -139,7 +140,7 @@ body {
 	font-weight: 700;
 	display: flex;
 	align-items: center;
-	width: 100%;
+	width: 60%;
 	color: #4C489D;
 	box-shadow: 0px 2px 2px #5C5696;
 	cursor: pointer;
@@ -192,6 +193,7 @@ body {
         <div class="screen">
             <div class="screen__content">
                 <form class="login" class="needs-validation" method="POST" form action="/api/register">
+					
                   <div class="login__field">
                     <i class="login__icon fas fa-lock"></i>
                     <div class="login_field was validated" ></div>

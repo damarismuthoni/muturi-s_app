@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Muturis Shop</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <style>
         :root{
   /* --background-dark: #2d3548; */
@@ -34,6 +36,10 @@ html{
 
 body{
   height: 100%;
+}
+
+.selector-for-some-widget {
+  box-sizing: content-box;
 }
 
 .hero-section{
@@ -74,28 +80,8 @@ body{
 .card:before{
   content: '';
   display: block;
-  padding-bottom: 150%;
   width: 100%;
 }
-
-.card__background{
-  background-size: cover;
-  background-position: center;
-  border-radius: var(--spacing-l);
-  bottom: 0;
-  filter: brightness(0.75) saturate(1.2) contrast(0.85);
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transform-origin: center;
-  trsnsform: scale(1) translateZ(0);
-  transition: 
-    filter 200ms linear,
-    transform 200ms linear;
-}
-
-
 
 .card__content{
   left: 0;
@@ -117,6 +103,7 @@ body{
   /* text-shadow: 2px 2px 20px rgba(0,0,0,0.2); */
   line-height: 1.4;
   word-spacing: 100vw;
+
 }
     </style>
 
@@ -126,49 +113,103 @@ body{
 
 <section class="hero-section">
   <div class="card-grid">
-    <a class="card" href="#">
-      <div class="card__background" style="background-image:  url('/images/cookingoil.jpg')" ></div>
-      <div class="card__content">
-        <h3 class="card__heading">Cooking oil</h3>
-      </div>
+   
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/maizeflour.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Maize Flour</h5>
+            <p class="card-text">Ksh 195</p>
+            
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">-</button>
+                <button type="button" class="btn btn-secondary btn-outline">1</button>
+                <button type="button" class="btn btn-secondary">+</button>
+              </div>'
+            <a href="#" class="btn btn-primary">Add To Cart</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/cookingoil.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">cookingoil</h5>
+            <p class="card-text">Ksh 265</p>
+            
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">-</button>
+                <button type="button" class="btn btn-secondary btn-outline">1</button>
+                <button type="button" class="btn btn-secondary">+</button>
+              </div>'
+            <a href="#" class="btn btn-primary">Add To Cart</a>
+        </div>
+    </div>
     
-    </a>
-    <a class="card" href="#">
-        <div class="card__background" style="background-image:  url('/images/maizeflour.jpg')" ></div>
-        <div class="card__content">
-          <h3 class="card__heading">Maize Flour</h3>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/wheatflour.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Wheat Flour</h5>
+            <p class="card-text">Ksh 200</p>
+            
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">-</button>
+                <button type="button" class="btn btn-secondary btn-outline">1</button>
+                <button type="button" class="btn btn-secondary">+</button>
+              </div>'
+            <a href="#" class="btn btn-primary">Add To Cart</a>
         </div>
-      
-      </a>
+    </div>
 
-      <a class="card" href="#">
-        <div class="card__background" style="background-image:  url('/images/wheatflour.jpg')" ></div>
-        <div class="card__content">
-          <h3 class="card__heading">Wheat Flour</h3>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/milk.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">milk</h5>
+            <p class="card-text">Ksh 120</p>
+            
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">-</button>
+                <button type="button" class="btn btn-secondary btn-outline">1</button>
+                <button type="button" class="btn btn-secondary">+</button>
+              </div>'
+            <a href="#" class="btn btn-primary">Add To Cart</a>
         </div>
-      
-      </a>
-    <a class="card" href="#">
-      <div class="card__background" style="background-image: url('/images/milk.jpg')"></div>
-      <div class="card__content">
-       <h3 class="card__heading">Milk</h3>
-      </div>
-    </a>
-    <a class="card" href="#">
-        <div class="card__background" style="background-image: url('/images/salt.jpg')"></div>
-        <div class="card__content">
-         <h3 class="card__heading">Salt</h3>
+    </div>
+    
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/salt.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">salt</h5>
+            <p class="card-text">Ksh 30</p>
+            
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">-</button>
+                <button type="button" class="btn btn-secondary btn-outline">1</button>
+                <button type="button" class="btn btn-secondary">+</button>
+              </div>'
+            <a href="#" class="btn btn-primary">Add To Cart</a>
         </div>
-      </a>
-
-      <a class="card" href="#">
-        <div class="card__background" style="background-image:  url('/images/sugar.jpg')" ></div>
-        <div class="card__content">
-          <h3 class="card__heading">Sugar</h3>
+    </div>
+    
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/sugar.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">sugar</h5>
+            <p class="card-text">Ksh 156</p>
+            
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">-</button>
+                <button type="button" class="btn btn-secondary btn-outline">1</button>
+                <button type="button" class="btn btn-secondary">+</button>
+              </div>'
+            <a href="#" class="btn btn-primary">Add To Cart</a>
         </div>
-      
-      </a>
+    </div>
+    
   <div>
 </section>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

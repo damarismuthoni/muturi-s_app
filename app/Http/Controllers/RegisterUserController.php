@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use app\Models\RegisterUser;
+use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\MessageBag;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -10,7 +10,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
-use App\User;
+
 
 
 class RegisterUserController extends BaseController
@@ -19,16 +19,16 @@ class RegisterUserController extends BaseController
 
     public function getRegisterUsers(){
 
-        $RegisteredUsers = RegisterUser::all(); 
+        $RegisteredUsers = User::all(); 
 
 
         return $RegisteredUsers;
     }
         public function register(Request $request){
-            
+             
             $validatedData = Validator::make($request->all(), [
                 'username' => ['required'],
-                'email' => ['required', 'unique:police_users','min:8'],
+                'email' => ['required', 'unique:users','min:8'],
                 'password' => ['required']
             ]);
 
@@ -42,9 +42,9 @@ class RegisterUserController extends BaseController
                 
             }
             
-            $newRegisteredUsers = RegisterUser::create([
-                'username' => $request->police_name,  
-                'email' => $request->reg_no,
+            $newRegisteredUsers = User::create([
+                'username' => $request->username,  
+                'email' => $request->email,
                 'password' => bcrypt($request->password)
             ]);
 
@@ -72,7 +72,7 @@ class RegisterUserController extends BaseController
             session(['user' => $newRegisteredUsers]);
 
         
-            return redirect('/homepage');
+            return redirect('/catalogue');
 
         
             return $newRegisteredUsers;
@@ -83,8 +83,9 @@ class RegisterUserController extends BaseController
 
         
         public function login(Request $request){
+           
         $validatedData = Validator::make($request->all(), [
-            'username' => ['required', 'exists:username'],
+            'email' => ['required', 'exists:users'],
             'password' => ['required']
         ]);
 
@@ -123,7 +124,7 @@ class RegisterUserController extends BaseController
         Session(['user' => $user]);
         // return session('user');
 
-        return redirect('/homepage');
+        return redirect('/catalogue');
 
 
     }

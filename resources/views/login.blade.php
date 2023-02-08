@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
-
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
@@ -31,7 +31,7 @@ body {
 	background: linear-gradient(90deg, #5D54A4, #7C78B8);		
 	position: relative;	
 	height: 600px;
-	width: 360px;	
+	width: 600px;	
 	box-shadow: 0px 0px 24px #5C5696;
 }
 
@@ -94,9 +94,10 @@ body {
 }
 
 .login {
-	width: 320px;
+	width: 450px;
 	padding: 30px;
 	padding-top: 156px;
+	margin: auto;
 }
 
 .login__field {
@@ -131,7 +132,7 @@ body {
 .login__submit {
 	background: #fff;
 	font-size: 14px;
-	margin-top: 30px;
+	/* margin: 50px 80px; */
 	padding: 16px 20px;
 	border-radius: 26px;
 	border: 1px solid #D4D3E8;
@@ -139,11 +140,12 @@ body {
 	font-weight: 700;
 	display: flex;
 	align-items: center;
-	width: 100%;
 	color: #4C489D;
 	box-shadow: 0px 2px 2px #5C5696;
 	cursor: pointer;
 	transition: .2s;
+	width: 100%;
+    margin: auto;
 }
 
 .login__submit:active,
@@ -189,11 +191,26 @@ body {
 </head>
 <body>
     <div class="container">
-        <div class="screen">
+        
+		<div class="screen">
             <div class="screen__content">
                 <form class="login" class="needs-validation" method="POST" form action="/api/login">
 
-                  
+
+					
+					@if ($errors->any())
+					<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						<b>{{ $message }}</b>
+						<ul>
+							@foreach ($errors->all() as $error)
+								<li>{{ $error }}</li>
+							@endforeach
+						</ul>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						  </button>
+					</div>
+				@endif
 
                     <div class="login__field">
                         <i class="login__icon fas fa-user"></i>
@@ -209,7 +226,7 @@ body {
                         <div class="invalid-feedback"></div>
                     </div>
                     <button class="button login__submit" input type="submit">
-                        <span class="button__text">Log In Now</span>
+                        <span class="button__text" style="margin: auto">Log In </span>
                         <i class="button__icon fas fa-chevron-right"></i>
                     </button>				
                 </form>
@@ -230,5 +247,9 @@ body {
             </div>		
         </div>
     </div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 </html>
